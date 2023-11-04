@@ -1,0 +1,278 @@
+.ui-password {
+    display: flex;
+    position: relative;
+    &__input {
+        @include input-main;
+        width: 100%;
+    }
+    &__button {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+}
+
+.ui-button-back-route {
+    @include flex-all-center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: $box-shadow1;
+    background: $color__white;
+}
+
+.ui-code-input {
+    .react-code-input {
+        display: flex !important;
+        justify-content: space-between;
+        width: 313px;
+        margin-top: 45px;
+        padding: 0 !important;
+    }
+}
+
+.ui-admin__subheader {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+        @include admin-main-title;
+        @include flex-all-center;
+        button {
+            line-height: 0%;
+            svg {
+                width: 30px;
+                height: 30px;
+                path {
+                    stroke: $color__blue1;
+                }
+            }
+        }
+    }
+    &-button {
+        color: $color__white;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        @include flex-all-center;
+        column-gap: 5px;
+        border-radius: 20px;
+        background: $color__black1;
+        padding: 6px 15px 6px 20px;
+    }
+}
+
+.ui-file-button {
+    @include flex-all-center;
+    width: 100%;
+    max-width: 161px;
+    height: 108px;
+    border-radius: 8px;
+    border: 2px dashed $color__grey2;
+    box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+    overflow: hidden;
+    cursor: pointer;
+    &-image {
+        max-width: 161px;
+        max-height: 108px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.ui-input-search {
+    @include input-main;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 20px;
+    align-items: center;
+    height: 50px;
+    &-container {
+        position: relative;
+    }
+
+    &-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+        transition: all 0.2s ease-in-out;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+.ui-modal {
+    width: 100vw;
+    border-radius: 16px 16px 0px 0px;
+    background: var(--White, #fff);
+    padding: 24px 0px;
+}
+
+.ui-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flex-all-center;
+    z-index: 26;
+    background-color: rgb(125 143 179 / 66%);
+    span {
+        color: $color__blue !important;
+    }
+}
+
+.ui-input__main {
+    @include input-main;
+    input {
+        width: 100%;
+    }
+}
+
+.ui-standart__header {
+    &-title {
+        @include title-main;
+    }
+    &-subtitle {
+        padding-top: 20px;
+        @include sub-title-main;
+    }
+}
+
+.ui-autocomplete {
+    border-radius: 8px;
+    background: $color__white;
+    box-shadow: $box-shadow1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    fieldset {
+        display: none;
+    }
+}
+
+.ui-date-input {
+    .react-code-input {
+        display: flex !important;
+        flex-wrap: nowrap;
+        input {
+            background: $color__white;
+            border: 0 !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+        input:nth-child(1) {
+            border-radius: 8px 0 0 8px !important ;
+        }
+        input:nth-child(2) {
+            border-radius: 0px 8px 8px 0px !important ;
+            margin-right: 12px !important;
+        }
+        input:nth-child(3) {
+            border-radius: 8px 0 0 8px !important ;
+        }
+        input:nth-child(4) {
+            border-radius: 0px 8px 8px 0px !important ;
+            margin-right: 12px !important;
+        }
+
+        input:nth-child(5) {
+            border-radius: 8px 0 0 8px !important ;
+        }
+        input:nth-child(6) {
+            border-radius: 0px !important ;
+        }
+        input:nth-child(7) {
+            border-radius: 0px !important ;
+        }
+        input:nth-child(8) {
+            border-radius: 0px 8px 8px 0px !important ;
+        }
+    }
+    &--disabled {
+        .react-code-input {
+            input {
+                color: red !important;
+            }
+        }
+    }
+}
+
+.slider__button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    min-height: 38px;
+    &-but {
+        color: $color__black1;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        height: fit-content;
+    }
+    &--pas {
+        color: $color__grey1;
+    }
+    &-border {
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 4px;
+        width: 50%;
+        background-color: $color__blue;
+        transition: all 0.3s ease;
+        border-radius: 20px 20px 0 0;
+        &--l {
+            transform: translateX(0%);
+        }
+        &--r {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.ui-post-slider{
+    position: relative;
+    &-list{
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 100px;
+        background: $color__black1;
+        display: flex;
+        padding: 5px;
+        gap: 10px;
+        &-item{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $color__grey2;
+       
+        }
+        &-item:first-child{
+            position: relative;
+        }
+    }
+    &-bar{
+        position: absolute;
+        width: 6px;
+        height: 6.2px;
+        border-radius: 3px;
+        z-index: 2;
+        background: $color__grey3;
+        transition: all 0.3s ease;
+    }
+}
